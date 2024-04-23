@@ -1,6 +1,5 @@
 import os
 from flask import Flask, json, request, jsonify
-from firebase_admin import credentials, firestore, initialize_app
 from models.vehicle import Vehicle
 from models.trip import Trip
 from models.users import Users
