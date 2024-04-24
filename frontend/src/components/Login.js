@@ -16,12 +16,12 @@ export default function Login({ loginFunc }) {
     }
 
     const firebaseConfig = {
-        apiKey: "AIzaSyDEbzt9TfJJZZxuZsH_qXv3eeb5g62GgmE",
-        authDomain: "my-finalproject-2b552.firebaseapp.com",
-        projectId: "my-finalproject-2b552",
-        storageBucket: "my-finalproject-2b552.appspot.com",
+        apiKey: ,
+        authDomain: 
+        projectId: ,
+        storageBucket: ",
         messagingSenderId: "512038742459",
-        appId: "1:512038742459:web:cd68f269818ae75585bc9e",
+        appId: ,
         measurementId: "G-LZBJTEXX4X"
     };
 
