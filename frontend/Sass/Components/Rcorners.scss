@@ -1,0 +1,41 @@
+#rcorners1 {
+    border-radius:  25px;
+    border: 2px solid rgb(6, 166, 240);
+    padding: 25px;
+    width: 400px;
+    height: auto;
+    float: right
+
+}
+
+#rcorners2 {
+    border-radius:  25px;
+    border: 2px solid rgb(131, 241, 41);
+    padding: 20px;
+    width: 400px;
+    height: auto;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+table {
+    width: 100;
+    border-collapse: collapse;
+}
+
+
+
+
+
+

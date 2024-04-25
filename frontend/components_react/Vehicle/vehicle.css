@@ -1,0 +1,69 @@
+
+
+.container2 {
+    position: relative;
+    background-image: url('./scene1.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding-bottom: 700px;
+    padding: 60px;
+    /* background-position: center; */
+}
+
+
+
+.button {
+    color:steelblue
+}
+
+.example-parent {
+    /* border: 1px solid #999; */
+    display: flex;
+    padding: 20px;
+    overflow-x: scroll;
+}
+
+
+
+
+.title {
+    padding-left: 40px;
+    color: white;
+    top: 40px;
+    padding-bottom: 10px;
+   
+}
+
+#rcorners5 {
+    position:relative;
+    border-radius: 12px;
+    box-shadow: 0 3px 9px black;
+    background-color: whitesmoke;
+    background-blend-mode: color rgb(9, 52, 192) saturation;
+    background: linear-gradient(to top right,rgb(9, 52, 192), rgb(255, 255, 255), orange);
+    width:fit-content;
+    max-height: max-content;
+    font-size: 20px;
+    padding: 10px;
+    padding-bottom: 30px;
+    margin: 20px;
+    margin-inline: 10px;
+    margin-left: 20px;
+    opacity: 0.8;
+    align-content:stretch;
+}
+
+
+
+
+
+
+#rcorners7 {
+    position: relative;
+    border-radius:  16px;
+    border: 2px solid rgb(131, 241, 41);
+    padding: 20px;
+    /* width: 400px; */
+    height: auto;
+
+}

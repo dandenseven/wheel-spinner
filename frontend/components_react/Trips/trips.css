@@ -1,0 +1,55 @@
+
+
+
+.container3 {
+    position: relative;
+    background-image: url('./scenee3.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+
+} 
+
+
+
+.example-parent {
+    /* border: 1px solid #999; */
+    display: flex;
+    padding: 20px;
+    overflow-x: scroll;
+}
+
+.root {
+    /* box-shadow: 0 4px 10px 0 rgb(0,0,0,0.2); */
+    position: relative;
+    transition: 0.3s;
+    background-color: whitesmoke;
+    width: 500px;
+    height: 450px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 20px;
+    padding: 20px;
+    padding-bottom: 30px;
+    opacity: 0.8;
+    box-shadow: 0 4px 10px rgb(18, 18, 20);
+    
+    
+    
+}
+
+.root:hover {
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.media {
+    background-image: url('./trips4.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 200px;
+    padding-top: 20px;
+    border-image: 20px;
+    border-radius: 10px  10px 0 0;
+    
+} 

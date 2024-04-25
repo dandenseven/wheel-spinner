@@ -1,0 +1,50 @@
+.container4 {
+    position: relative;
+    background-image: url('./scene3.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding-bottom: 680px;
+}
+
+.example-parent {
+    /* border: 1px solid #999; */
+    display: flex;
+    padding: 20px;
+    overflow-x: scroll;
+}
+
+
+#rcorners12 {
+    position:relative;
+    border-radius: 12px;
+    /* background-size: contain; */
+    background-color: mediumturquoise;
+    background: linear-gradient(to top right,rgb(9, 52, 192), rgb(255, 255, 255), orange);
+    box-shadow: 0 3px 9px rgb(28, 29, 31);
+    width: 1000px;
+    height: 300px;
+    opacity: 0.8;
+}
+
+
+.heading {
+    padding-left: 20px;
+    color: white;
+}
+
+.calendar {
+    position: relative;
+    left: 14px;
+    bottom: -8px;
+    
+    
+}
+
+.calendar1 {
+    position: relative;
+    left: 300px;
+    bottom: 42px;
+    
+    
+}
+
