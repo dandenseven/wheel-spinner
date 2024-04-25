@@ -1,5 +1,7 @@
 import os
 from flask import Flask, json, request, jsonify
+from getpass import getpass
+from mysql.connector import connect, Error
 from models.vehicle import Vehicle
 from models.trip import Trip
 from models.users import Users
@@ -23,6 +25,20 @@ CORS(app)
 
 # curl localhost:5000/api/login -X POST -H "Content-Type: application/json" -d '{"user_id": 401, "email": "my@email.com", "password": "mustang"}'
 # curl localhost:5000/api/login -X POST -H "Content-Type: application/json" -d '{"email": "my@email.com", "password": "mustang"}'
+
+try: 
+
+    with connect(
+        host="localhost",
+        user=input("Enter username: "),
+        password=getpass("Enter password: "),
+     ) as connection:
+        create_db_query = "CREATE DATABASE vehicles_inventory"
+        with connection.cursor() as cursor:
+            cursor.execute(create_db_query)
+except Error as e:
+    print(e)
+
 
 @app.route("/api/login", methods=["POST"])
 def login():
