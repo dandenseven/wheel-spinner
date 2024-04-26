@@ -2,6 +2,7 @@ import os
 from flask import Flask, json, request, jsonify
 from getpass import getpass
 from mysql.connector import connect, Error
+from pymongo import MongoClient
 from models.vehicle import Vehicle
 from models.trip import Trip
 from models.users import Users
@@ -38,6 +39,10 @@ try:
             cursor.execute(create_db_query)
 except Error as e:
     print(e)
+
+
+client = MongoClient(host="localhost", port=27017)
+db = client["tire_miles"]
 
 
 @app.route("/api/login", methods=["POST"])
