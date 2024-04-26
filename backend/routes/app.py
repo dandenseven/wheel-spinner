@@ -3,6 +3,7 @@ from flask import Flask, json, request, jsonify
 from getpass import getpass
 from mysql.connector import connect, Error
 from pymongo import MongoClient
+from mongoengine import connect
 from models.vehicle import Vehicle
 from models.trip import Trip
 from models.users import Users
@@ -34,16 +35,20 @@ try:
         user=input("Enter username: "),
         password=getpass("Enter password: "),
      ) as connection:
-        create_db_query = "CREATE DATABASE vehicles_inventory"
+        create_db_query = "CREATE DATABASE vehicle_inventory"
         with connection.cursor() as cursor:
             cursor.execute(create_db_query)
 except Error as e:
     print(e)
 
 
-client = MongoClient(host="localhost", port=27017)
-db = client["tire_miles"]
+connect(db="collection")
+ 
 
+ # todo_ref = db.collection('todos')
+# Users.users_ref = db.collection('users')
+# Vehicle.vehicle_ref = db.collection('vehicle')
+# Trip.trip_ref = db.collection('trip')
 
 @app.route("/api/login", methods=["POST"])
 def login():
