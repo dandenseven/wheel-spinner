@@ -1,9 +1,10 @@
 import os
 from flask import Flask, json, request, jsonify
 from getpass import getpass
+import mongoengine
 from mysql.connector import connect, Error
 from pymongo import MongoClient
-from mongoengine import connect
+from mongoengine import *
 from models.vehicle import Vehicle
 from models.trip import Trip
 from models.users import Users
@@ -42,10 +43,13 @@ except Error as e:
     print(e)
 
 
-connect(db="collection")
- 
+connect('tire_data')
 
- # todo_ref = db.collection('todos')
+
+
+
+
+todo_ref = db.collection('todos')
 # Users.users_ref = db.collection('users')
 # Vehicle.vehicle_ref = db.collection('vehicle')
 # Trip.trip_ref = db.collection('trip')
