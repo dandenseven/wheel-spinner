@@ -2,7 +2,7 @@ import os
 from flask import Flask, json, request, jsonify
 from getpass import getpass
 from mysql.connector import connect, Error
-from pymongo import MongoClient
+from pymongo import *
 from mongoengine import connect
 from models.vehicle import Vehicle
 from models.trip import Trip
@@ -28,6 +28,9 @@ CORS(app)
 # curl localhost:5000/api/login -X POST -H "Content-Type: application/json" -d '{"user_id": 401, "email": "my@email.com", "password": "mustang"}'
 # curl localhost:5000/api/login -X POST -H "Content-Type: application/json" -d '{"email": "my@email.com", "password": "mustang"}'
 
+
+# MySQL database connection
+
 try: 
 
     with connect(
@@ -42,8 +45,11 @@ except Error as e:
     print(e)
 
 
-connect('tire_collectiondb')
-connect(host="mongodb://my_user:my_password@hostname:port/tire_collection?authSource=admin")
+# Mongodb connection to database
+
+connect(host='mongodb://localhost:27017/tire_collectiondb')
+
+class Trip(Document):
 
 
 # todo_ref = db.collection('todos')
