@@ -2,14 +2,15 @@ import os
 from flask import Flask, json, request, jsonify
 from getpass import getpass
 from mysql.connector import connect, Error
-from pymongo import *
-from mongoengine import connect
+from pymongo import MongoClient
+from bson.json_util import dumps
+# from mongoengine import connect
 from models.vehicle import Vehicle
 from models.trip import Trip
 from models.users import Users
 from flask_cors import CORS
 import datetime
-
+import names
 
 app = Flask(__name__)
 CORS(app)
@@ -44,17 +45,20 @@ try:
 except Error as e:
     print(e)
 
+# Vehicle.vehicle_ref = db.collection('vehicle')
+
 
 # Mongodb connection to database
 
-connect(host='mongodb://localhost:27017/tire_collectiondb')
+client = MongoClient('mongodb://localhost:27017')
+db = client.tire_collectiondb
 
-class Trip(Document):
 
 
-# todo_ref = db.collection('todos')
-# Users.users_ref = db.collection('users')
-# Vehicle.vehicle_ref = db.collection('vehicle')
+
+todo_ref = db.collection('todos')
+Users.users_ref = db.collection('users')
+
 # Trip.trip_ref = db.collection('trip')
 
 @app.route("/api/login", methods=["POST"])
