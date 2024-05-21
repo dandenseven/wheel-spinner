@@ -54,10 +54,12 @@ client = MongoClient('mongodb://localhost:27017')
 db = client.tire_collectiondb
 
 
+todo_ref = db.todos
+Users.users_ref = db.users
+Trip.trip_ref = db.trip
 
-
-todo_ref = db.collection('todos')
-Users.users_ref = db.collection('users')
+# todo_ref = db.collection('todos')
+# Users.users_ref = db.collection('users')
 
 # Trip.trip_ref = db.collection('trip')
 
