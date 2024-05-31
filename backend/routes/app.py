@@ -52,7 +52,7 @@ except Error as e:
 
 client = MongoClient('mongodb://localhost:27017')
 db = client.tire_collectiondb
-
+db.authenticate('admin', 'password')
 
 todo_ref = db.todos
 Users.users_ref = db.users
