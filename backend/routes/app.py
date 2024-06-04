@@ -3,7 +3,7 @@ from flask import Flask, json, request, jsonify
 from getpass import getpass
 from mysql.connector import connect, Error
 from pymongo import MongoClient
-from bson.json_util import dumps
+from bson import json_util
 # from mongoengine import connect
 from models.vehicle import Vehicle
 from models.trip import Trip
@@ -11,6 +11,8 @@ from models.users import Users
 from flask_cors import CORS
 import datetime
 import names
+
+data = json_util.loads(response.read())
 
 app = Flask(__name__)
 CORS(app)
