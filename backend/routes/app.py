@@ -12,6 +12,7 @@ from flask_cors import CORS
 import datetime
 import names
 
+response = request.get(...)
 data = json_util.loads(response.read())
 
 app = Flask(__name__)
@@ -34,18 +35,18 @@ CORS(app)
 
 # MySQL database connection
 
-try: 
+# try: 
 
-    with connect(
-        host="localhost",
-        user=input("Enter username: "),
-        password=getpass("Enter password: "),
-     ) as connection:
-        create_db_query = "CREATE DATABASE vehicle_inventory"
-        with connection.cursor() as cursor:
-            cursor.execute(create_db_query)
-except Error as e:
-    print(e)
+#     with connect(
+#         host="localhost",
+#         user=input("Enter username: "),
+#         password=getpass("Enter password: "),
+#      ) as connection:
+#         create_db_query = "CREATE DATABASE vehicle_inventory"
+#         with connection.cursor() as cursor:
+#             cursor.execute(create_db_query)
+# except Error as e:
+#     print(e)
 
 # Vehicle.vehicle_ref = db.collection('vehicle')
 
