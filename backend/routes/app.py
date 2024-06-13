@@ -5,7 +5,7 @@ from mysql.connector import connect, Error
 from pymongo import MongoClient
 from bson import json_util
 # from mongoengine import connect
-from models.vehicle import Vehicle
+from vehicle import Vehicle
 from models.trip import Trip
 from models.users import Users
 from flask_cors import CORS
@@ -59,6 +59,7 @@ db.authenticate('admin', 'password')
 
 todo_ref = db.todos
 Users.users_ref = db.users
+Vehicle.vehicle_ref = db.vehicle
 Trip.trip_ref = db.trip
 
 # todo_ref = db.collection('todos')

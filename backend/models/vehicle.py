@@ -1,5 +1,5 @@
+from pymongo import MongoClient
 import datetime
-from firebase_admin import credentials, firestore, initialize_app
 
 
 class Vehicle:

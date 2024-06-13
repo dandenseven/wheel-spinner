@@ -1,4 +1,4 @@
-from firebase_admin import credentials, firestore, initialize_app
+from pymongo import MongoClient
 import datetime
 
 
@@ -42,3 +42,7 @@ class Trip:
     def trips_for_user(cls, user_id):
         trips = cls.trip_ref.where("user_id", "==", user_id).get()
         return [trip.to_dict() for trip in trips]
+
+
+if __name__ == "__main__":
+    pass
