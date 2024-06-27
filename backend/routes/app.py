@@ -1,12 +1,14 @@
 import os
+import sys
+sys.path.append('/wheel-spinner/backend/models/')
 from flask import Flask, json, request, jsonify
 from getpass import getpass
 from mysql.connector import connect, Error
 from pymongo import MongoClient
 from bson import json_util
 # from mongoengine import connect
-from vehicle import Vehicle
-from models.trip import Trip
+# from models.vehicle import Vehicle
+# from models.trip import Trip
 from models.users import Users
 from flask_cors import CORS
 import datetime
@@ -54,13 +56,19 @@ CORS(app)
 # Mongodb connection to database
 
 client = MongoClient('mongodb://localhost:27017')
-db = client.tire_collectiondb
+db = client['tire_collectiondb']
 db.authenticate('admin', 'password')
 
-todo_ref = db.todos
-Users.users_ref = db.users
-Vehicle.vehicle_ref = db.vehicle
-Trip.trip_ref = db.trip
+model = Users()
+model.create_collection()
+
+# collection = db['todos']
+collection1 = db['users']
+# collection = db['trip']
+# todo_ref = db.todos
+# Users.users_ref = db.users
+# Vehicle.vehicle_ref = db.vehicle
+# Trip.trip_ref = db.trip
 
 # todo_ref = db.collection('todos')
 # Users.users_ref = db.collection('users')
