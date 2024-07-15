@@ -1,25 +1,42 @@
 import os
 import sys
-sys.path.append('/wheel-spinner/backend/models/')
-from flask import Flask, json, request, jsonify
+print(sys.path)
+import importlib_resources
+import module
+sys.path
+# sys.path.append('/wheel-spinner/backend/models/')
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 from getpass import getpass
 from mysql.connector import connect, Error
 from pymongo import MongoClient
-from bson import json_util
-# from mongoengine import connect
-# from models.vehicle import Vehicle
-# from models.trip import Trip
+from mongoengine import connect
+from models.vehicle import Vehicle
+from models.trip import Trip
 from models.users import Users
-from flask_cors import CORS
+import bson
+from bson import json_util
+import bsonjs
 import datetime
 import names
 
+
 response = request.get(...)
-data = json_util.loads(response.read())
+data = bson.json_util.loads(response.read())
 
 app = Flask(__name__)
 CORS(app)
 
+client = MongoClient('mongodb://localhost:27017/')
+db = client['tire_collectiondb']
+collection = db["users"]
+model = Users()
+# model = Vehicle()
+# model = Trip()
+Users.users_ref = db.collection('users')
+
+
+# model.create_collection()
 # cred = credentials.Certificate('key.json')
 
 
@@ -55,15 +72,15 @@ CORS(app)
 
 # Mongodb connection to database
 
-client = MongoClient('mongodb://localhost:27017')
-db = client['tire_collectiondb']
-db.authenticate('admin', 'password')
+# client = MongoClient('mongodb://localhost:27017/')
+# db = client['tire_collectiondb']
+# db.authenticate('admin', 'password')
 
-model = Users()
-model.create_collection()
+# model = Users()
+# model.create_collection()
 
 # collection = db['todos']
-collection1 = db['users']
+# collection1 = db['users']
 # collection = db['trip']
 # todo_ref = db.todos
 # Users.users_ref = db.users
